@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/what_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="WHAT YOU WANT TO DO?"
+            android:textColor="#F84C05"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_rele"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/what_txt">
+
+            <Button
+                android:id="@+id/update_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#F84C05"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Update" />
+
+            <Button
+                android:id="@+id/delete_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/update_btn"
+                android:backgroundTint="#FF0015"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Delete" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_rele"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#45BA4A"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Cancel" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Enter Details to Update"
+            android:textColor="#F84C05"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:id="@+id/edt_rele"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_txt"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/d_table_no_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_semibold"
+                android:hint="Table No."
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/customer_name_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d_table_no_edt"
+                android:fontFamily="@font/quicksand_semibold"
+                android:hint="Customer Name"
+                android:inputType="textCapWords" />
+
+            <EditText
+                android:id="@+id/people_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/customer_name_edt"
+                android:fontFamily="@font/quicksand_semibold"
+                android:hint="Number Of People"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/dialog_update_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/people_edt"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#F84C05"
+                android:fontFamily="@font/quicksand_semibold"
+                android:text="Update" />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

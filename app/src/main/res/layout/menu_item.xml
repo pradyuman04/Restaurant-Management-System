@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/dish_name_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DISH NAME"
+        android:fontFamily="@font/quicksand_semibold"
+        android:textStyle="bold"
+        android:textColor="#F84C05"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/rupees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹"
+        android:fontFamily="@font/quicksand_bold"
+        android:textStyle="bold"
+        android:textColor="#FF0015"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/dish_price_txt"/>
+
+    <TextView
+        android:id="@+id/dish_price_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="250"
+        android:fontFamily="@font/quicksand_bold"
+        android:textStyle="bold"
+        android:textColor="#FF0015"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

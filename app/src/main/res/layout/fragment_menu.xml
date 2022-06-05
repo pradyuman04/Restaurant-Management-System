@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Menu_Fragment">
+
+    <TextView
+        android:id="@+id/all_menu_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="ALL MENU"
+        android:textColor="#F84C05"
+        android:textSize="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/all_menu_txt">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:id="@+id/item1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="STATER"
+               android:textSize="20dp"
+               android:layout_marginTop="10dp"
+               android:fontFamily="@font/quicksand_bold"
+               android:textColor="#FF0015"
+               android:layout_marginLeft="10dp"/>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/menu_rv_view"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/item1"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp" />
+
+           <TextView
+               android:id="@+id/item2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="MAIN COURSE"
+               android:textSize="20dp"
+               android:fontFamily="@font/quicksand_bold"
+               android:textColor="#FF0015"
+               android:layout_marginLeft="10dp"
+               android:layout_below="@id/menu_rv_view"/>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/menu_rv_view2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/item2"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp" />
+
+       </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
