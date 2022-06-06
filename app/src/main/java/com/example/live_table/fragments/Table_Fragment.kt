@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.live_table.Utils.DBHelper
 import com.example.live_table.Utils.ModelData
 import com.example.live_table.databinding.FragmentTableBinding
+import com.example.live_table.fragmentAdapter.Table_Fragment_Adapter
 
 class Table_Fragment : Fragment() {
 

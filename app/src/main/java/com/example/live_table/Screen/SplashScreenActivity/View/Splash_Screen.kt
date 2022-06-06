@@ -1,4 +1,4 @@
-package com.example.live_table.Screen.Splash_Screen.View
+package com.example.live_table.Screen.SplashScreenActivity.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

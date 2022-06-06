@@ -2,7 +2,7 @@ package com.example.live_table.Screen.HomeScreenActivity.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.live_table.fragments.Fragment_Adapter
+import com.example.live_table.fragmentAdapter.Fragment_Adapter
 import com.example.live_table.databinding.HomeScreenBinding
 import com.google.android.material.tabs.TabLayout
 

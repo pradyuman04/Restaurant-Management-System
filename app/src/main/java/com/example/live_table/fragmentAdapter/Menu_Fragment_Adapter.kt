@@ -1,4 +1,4 @@
-package com.example.live_table.fragments
+package com.example.live_table.fragmentAdapter
 
 import android.view.LayoutInflater
 import android.view.View

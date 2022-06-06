@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.example.live_table.databinding.FragmentMenuBinding
+import com.example.live_table.fragmentAdapter.Menu_Fragment_Adapter
 
 
 class Menu_Fragment : Fragment() {

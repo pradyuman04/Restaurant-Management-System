@@ -1,9 +1,12 @@
-package com.example.live_table.fragments
+package com.example.live_table.fragmentAdapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.live_table.Screen.HomeScreenActivity.View.Home_Screen
+import com.example.live_table.fragments.Home_Fragment
+import com.example.live_table.fragments.Menu_Fragment
+import com.example.live_table.fragments.Table_Fragment
 
 class Fragment_Adapter(home_screen: Home_Screen, supportFragmentManager: FragmentManager) :
     FragmentPagerAdapter(supportFragmentManager) {
