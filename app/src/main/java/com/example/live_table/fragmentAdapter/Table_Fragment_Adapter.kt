@@ -12,6 +12,9 @@ import com.example.live_table.R
 import com.example.live_table.Utils.DBHelper
 import com.example.live_table.Utils.ModelData
 import com.example.live_table.fragments.Table_Fragment.Companion.binding_table
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>) :
     RecyclerView.Adapter<Table_Fragment_Adapter.ViewData>() {
@@ -27,6 +30,7 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
         holder.tab_no_txt.text = l1[position].table_no
         holder.customer_name_txt.text = l1[position].customer_name
         holder.num_people_txt.text = l1[position].number_of_people
+        holder.time_txt.text = l1[position].booking_time
 
         holder.main_rele.setOnClickListener {
 
@@ -46,6 +50,8 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
         var customer_name_txt = itemView.findViewById<TextView>(R.id.customer_name_txt)
         var num_people_txt = itemView.findViewById<TextView>(R.id.num_people_txt)
         var main_rele = itemView.findViewById<RelativeLayout>(R.id.main_rele)
+        var time_txt = itemView.findViewById<TextView>(R.id.time_txt)
+        var booked_btn = itemView.findViewById<Button>(R.id.booked_btn)
 
     }
 

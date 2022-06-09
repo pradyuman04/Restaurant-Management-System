@@ -13,8 +13,9 @@
 
 
         <RelativeLayout
+            android:id="@+id/main_rele"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:id="@+id/image_slider_rele"
@@ -40,6 +41,10 @@
                     app:topShadowHeight="32dp" />
 
             </RelativeLayout>
+
+
+
+
 
             <TextView
                 android:id="@+id/table_txt"
@@ -80,7 +85,6 @@
                 android:textSize="18dp" />
 
 
-
             <RelativeLayout
                 android:id="@+id/edt_rele"
                 android:layout_width="match_parent"
@@ -115,19 +119,11 @@
                     android:hint="Number Of People"
                     android:inputType="number" />
 
-                <Spinner
-                    android:id="@+id/time_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/people_edt"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="10dp" />
-
                 <Button
                     android:id="@+id/book_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/time_spinner"
+                    android:layout_below="@id/people_edt"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#F84C05"
@@ -136,7 +132,9 @@
 
             </RelativeLayout>
 
-        </RelativeLayout>
+
+</RelativeLayout>
+
 
     </ScrollView>
 

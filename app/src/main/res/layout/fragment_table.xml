@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAF6F6"
     tools:context=".fragments.Table_Fragment">
 
     <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/seedata_rvview"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+        android:background="#FAF6F6"/>
 
 </RelativeLayout>
