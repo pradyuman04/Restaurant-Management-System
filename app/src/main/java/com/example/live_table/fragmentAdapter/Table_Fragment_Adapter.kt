@@ -27,12 +27,12 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
 
     override fun onBindViewHolder(holder: ViewData, position: Int) {
         holder.id.text = l1[position].id
-        holder.tab_no_txt.text = l1[position].table_no
+        holder.tableNoTxt.text = l1[position].tableNoTxt
         holder.customer_name_txt.text = l1[position].customer_name
         holder.num_people_txt.text = l1[position].number_of_people
         holder.time_txt.text = l1[position].booking_time
 
-        holder.main_rele.setOnClickListener {
+        holder.editImageBtn.setOnClickListener {
 
             opendialog(position)
 
@@ -46,12 +46,12 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
     class ViewData(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var id = itemView.findViewById<TextView>(R.id.id)
-        var tab_no_txt = itemView.findViewById<TextView>(R.id.tab_no_txt)
+        var tableNoTxt = itemView.findViewById<TextView>(R.id.tableNoTxt)
         var customer_name_txt = itemView.findViewById<TextView>(R.id.customer_name_txt)
         var num_people_txt = itemView.findViewById<TextView>(R.id.num_people_txt)
-        var main_rele = itemView.findViewById<RelativeLayout>(R.id.main_rele)
+        var editImageBtn = itemView.findViewById<ImageView>(R.id.editImageBtn)
         var time_txt = itemView.findViewById<TextView>(R.id.time_txt)
-        var booked_btn = itemView.findViewById<Button>(R.id.booked_btn)
+
 
     }
 
@@ -60,11 +60,11 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
         var dialog = Dialog(factivity!!)
         dialog.setContentView(R.layout.dialog)
         dialog.show()
-        dialog.setCancelable(false)
+
 
         var update = dialog.findViewById<Button>(R.id.update_btn)
         var delete = dialog.findViewById<Button>(R.id.delete_btn)
-        var cancel = dialog.findViewById<Button>(R.id.cancel_btn)
+
 
        update.setOnClickListener {
 
@@ -72,19 +72,20 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
            update_dialog.setContentView(R.layout.update_dialog)
            update_dialog.show()
 
-           var table_no_edt = update_dialog.findViewById<EditText>(R.id.d_table_no_edt)
-           var customer_name_edt = update_dialog.findViewById<EditText>(R.id.customer_name_edt)
-           var people_edt = update_dialog.findViewById<EditText>(R.id.people_edt)
+           var tNo = update_dialog.findViewById<TextView>(R.id.tNo)
+           var cName = update_dialog.findViewById<EditText>(R.id.cName)
+           var noPeople = update_dialog.findViewById<EditText>(R.id.noPeople)
            var dialog_update_btn = update_dialog.findViewById<Button>(R.id.dialog_update_btn)
 
-           table_no_edt.setText(""+l1[position].table_no)
-           customer_name_edt.setText(""+l1[position].customer_name)
-           people_edt.setText(""+l1[position].number_of_people)
+           tNo.setText(""+l1[position].tableNoTxt)
+           cName.setText(""+l1[position].customer_name)
+           noPeople.setText(""+l1[position].number_of_people)
+
 
            dialog_update_btn.setOnClickListener {
 
 
-               DBHelper(factivity).updateData(l1[position].id,table_no_edt.text.toString(),customer_name_edt.text.toString(),people_edt.text.toString())
+               DBHelper(factivity).updateData(l1[position].id,cName.text.toString(),noPeople.text.toString())
                 var l1 = DBHelper(factivity).readData()
                setupRecyclerView(l1)
 
@@ -106,10 +107,7 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
             dialog.dismiss()
         }
 
-        cancel.setOnClickListener {
 
-            dialog.dismiss()
-        }
     }
 
     fun setupRecyclerView(l1:ArrayList<ModelData>){

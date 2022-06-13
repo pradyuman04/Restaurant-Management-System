@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Live_Table"
         tools:targetApi="31">
         <activity
-            android:name=".Screen.HomeScreenActivity.View.Home_Screen"
+            android:name=".Activity.HomeScreenActivity.View.Home_Screen"
             android:exported="false" />
         <activity
-            android:name=".Screen.SplashScreenActivity.View.Splash_Screen"
+            android:name=".Activity.SplashScreenActivity.View.Splash_Screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,10 +1,10 @@
-package com.example.live_table.Screen.SplashScreenActivity.View
+package com.example.live_table.Activity.SplashScreenActivity.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.live_table.Screen.HomeScreenActivity.View.Home_Screen
+import com.example.live_table.Activity.HomeScreenActivity.View.Home_Screen
 import com.example.live_table.databinding.SplashScreenBinding
 
 class Splash_Screen : AppCompatActivity() {

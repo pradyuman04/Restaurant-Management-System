@@ -13,10 +13,20 @@
             android:id="@+id/title_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="Updating For Table No : "
+            android:textColor="#005F9F" />
+
+        <TextView
+            android:id="@+id/tNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/title_txt"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Enter Details to Update"
-            android:textColor="#F84C05"
-            android:layout_centerHorizontal="true"/>
+            android:text="12"
+            android:textColor="#005F9F"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/edt_rele"
@@ -25,40 +35,57 @@
             android:layout_below="@id/title_txt"
             android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/d_table_no_edt"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_semibold"
-                android:hint="Table No."
-                android:inputType="number" />
+                android:hint="Customer Name "
+                android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/customer_name_edt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/d_table_no_edt"
-                android:fontFamily="@font/quicksand_semibold"
-                android:hint="Customer Name"
-                android:inputType="textCapWords" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:textColor="#005F9F"
+                    android:textStyle="bold"/>
 
-            <EditText
-                android:id="@+id/people_edt"
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/customer_name_edt"
-                android:fontFamily="@font/quicksand_semibold"
                 android:hint="Number Of People"
-                android:inputType="number" />
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/filledTextField1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/noPeople"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:textColor="#005F9F"
+                    android:textStyle="bold"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/dialog_update_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/people_edt"
+                android:layout_below="@id/filledTextField3"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#F84C05"
+                android:backgroundTint="#005F9F"
                 android:fontFamily="@font/quicksand_semibold"
                 android:text="Update" />
 

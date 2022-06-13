@@ -13,8 +13,9 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/quicksand_bold"
         android:text="ALL MENU"
-        android:textColor="#F84C05"
-        android:textSize="20dp" />
+        android:textColor="#005F9F"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,12 +30,12 @@
                android:id="@+id/item1"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="STATER"
-               android:textSize="20dp"
+               android:layout_marginLeft="10dp"
                android:layout_marginTop="10dp"
-               android:fontFamily="@font/quicksand_bold"
-               android:textColor="#FF0015"
-               android:layout_marginLeft="10dp"/>
+               android:fontFamily="@font/quicksand_semibold"
+               android:text="STATER"
+               android:textColor="#005F9F"
+               android:textSize="20dp" />
 
            <androidx.recyclerview.widget.RecyclerView
                android:id="@+id/menu_rv_view"
@@ -48,12 +49,12 @@
                android:id="@+id/item2"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="MAIN COURSE"
-               android:textSize="20dp"
-               android:fontFamily="@font/quicksand_bold"
-               android:textColor="#FF0015"
+               android:layout_below="@id/menu_rv_view"
                android:layout_marginLeft="10dp"
-               android:layout_below="@id/menu_rv_view"/>
+               android:fontFamily="@font/quicksand_semibold"
+               android:text="MAIN COURSE"
+               android:textColor="#005F9F"
+               android:textSize="20dp" />
 
            <androidx.recyclerview.widget.RecyclerView
                android:id="@+id/menu_rv_view2"

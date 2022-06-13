@@ -11,19 +11,19 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
     override fun onCreate(p0: SQLiteDatabase?) {
 
         var quary =
-            "CREATE TABLE live_table (id INTEGER PRIMARY KEY AUTOINCREMENT, table_no TEXT,customer_name TEXT,number_of_people TEXT,booking_time TEXT)"
+            "CREATE TABLE live_table (id INTEGER PRIMARY KEY AUTOINCREMENT,tableNoTxt INTEGER, customer_name TEXT,number_of_people TEXT,booking_time TEXT)"
         p0!!.execSQL(quary)
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
     }
 
-    fun insertData(n1: String, n2: String, n3: String,n4:String) {
+    fun insertData(n1: String, n2: String, n3: String, n4 : String) {
 
         var db = writableDatabase
 
         var cv = ContentValues()
-        cv.put("table_no", n1)
+        cv.put("tableNoTxt",n1)
         cv.put("customer_name", n2)
         cv.put("number_of_people", n3)
         cv.put("booking_time",n4)
@@ -48,12 +48,12 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
             do {
 
                 var id = cursor.getString(cursor.getColumnIndex("id"))
-                var table_no = cursor.getString(cursor.getColumnIndex("table_no"))
+                var tableNoTxt = cursor.getString(cursor.getColumnIndex("tableNoTxt"))
                 var customer_name = cursor.getString(cursor.getColumnIndex("customer_name"))
                 var number_of_people = cursor.getString(cursor.getColumnIndex("number_of_people"))
                 var booking_time = cursor.getString(cursor.getColumnIndex("booking_time"))
 
-                var l1 = ModelData(id, table_no, customer_name, number_of_people,booking_time)
+                var l1 = ModelData(id,tableNoTxt, customer_name, number_of_people,booking_time)
                 list.add(l1)
 
             } while (cursor.moveToNext())
@@ -72,13 +72,12 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
 
     }
 
-    fun updateData(id : String, table_no : String, customer_name : String, number_of_people : String) {
+    fun updateData(id : String, customer_name : String, number_of_people : String) {
 
         var db = writableDatabase
 
         var cv = ContentValues()
 
-        cv.put("table_no", table_no)
         cv.put("customer_name", customer_name)
         cv.put("number_of_people", number_of_people)
 

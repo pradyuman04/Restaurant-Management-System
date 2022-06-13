@@ -1,4 +1,4 @@
-package com.example.live_table.Screen.HomeScreenActivity.View
+package com.example.live_table.Activity.HomeScreenActivity.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,4 +49,5 @@ class Home_Screen : AppCompatActivity() {
             }
         })
     }
+
 }
