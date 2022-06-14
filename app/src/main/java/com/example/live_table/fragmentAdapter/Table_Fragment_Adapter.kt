@@ -12,8 +12,6 @@ import com.example.live_table.R
 import com.example.live_table.Utils.DBHelper
 import com.example.live_table.Utils.ModelData
 import com.example.live_table.fragments.Table_Fragment.Companion.binding_table
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>) :
@@ -21,7 +19,7 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewData {
-        var view = LayoutInflater.from(factivity).inflate(R.layout.item, parent, false)
+        var view = LayoutInflater.from(factivity).inflate(R.layout.table_details_item, parent, false)
         return ViewData(view)
     }
 
@@ -58,7 +56,7 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
     fun opendialog(position:Int) {
 
         var dialog = Dialog(factivity!!)
-        dialog.setContentView(R.layout.dialog)
+        dialog.setContentView(R.layout.update_delete_dialog)
         dialog.show()
 
 

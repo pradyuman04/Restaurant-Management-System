@@ -1,7 +1,6 @@
 package com.example.live_table.fragments
 
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,8 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.ColorInt
-import androidx.annotation.RequiresApi
 import com.example.live_table.R
 import com.example.live_table.Activity.HomeScreenActivity.View.Home_Screen.Companion.binding11
 import com.example.live_table.Utils.DBHelper
@@ -202,7 +199,7 @@ class Home_Fragment : Fragment() {
 
 
         var dialog1 = activity?.let { BottomSheetDialog(it) }
-        dialog1?.setContentView(R.layout.demo)
+        dialog1?.setContentView(R.layout.get_data_bottomsheet)
 
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
         val currentDateAndTime: String = simpleDateFormat.format(Date())
