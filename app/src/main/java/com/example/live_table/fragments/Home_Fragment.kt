@@ -1,20 +1,20 @@
 package com.example.live_table.fragments
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.live_table.R
 import com.example.live_table.Activity.HomeScreenActivity.View.Home_Screen.Companion.binding11
 import com.example.live_table.Utils.DBHelper
 import com.example.live_table.Utils.ModelData
+import com.example.live_table.Utils.viewModelData
 import com.example.live_table.databinding.FragmentHomeBinding
+import com.example.live_table.fragmentAdapter.viewTableAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import java.text.SimpleDateFormat
@@ -28,6 +28,7 @@ class Home_Fragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     val list = mutableListOf<CarouselItem>()
     var list1 = ArrayList<ModelData>()
+    var list2 = ArrayList<viewModelData>()
     var i = 10
 
     override fun onCreateView(
@@ -36,94 +37,6 @@ class Home_Fragment : Fragment() {
     ): View? {
 
         binding = FragmentHomeBinding.inflate(layoutInflater)
-
-        binding.noOfTableTxt.text = i.toString()
-
-        binding.tableNo1.setOnClickListener {
-
-
-
-            val i = 1
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo2.setOnClickListener {
-
-            val i = 2
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo3.setOnClickListener {
-
-            val i = 3
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo4.setOnClickListener {
-
-            val i = 4
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo5.setOnClickListener {
-
-            val i = 5
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo6.setOnClickListener {
-
-            val i = 6
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo7.setOnClickListener {
-
-            val i = 7
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo8.setOnClickListener {
-
-            val i = 8
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo9.setOnClickListener {
-
-            val i = 9
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo10.setOnClickListener {
-
-            val i = 10
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo11.setOnClickListener {
-
-            val i = 11
-            bottomSheet(i)
-
-        }
-
-        binding.tableNo12.setOnClickListener {
-
-            val i = 12
-            bottomSheet(i)
-
-        }
 
         binding.tableDetails.setOnClickListener {
 
@@ -135,6 +48,12 @@ class Home_Fragment : Fragment() {
 
 
         var db = DBHelper(activity)
+
+
+
+
+
+        setupTableRecyclerView()
 
 
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
@@ -176,7 +95,6 @@ class Home_Fragment : Fragment() {
 
                     Toast.makeText(activity, "Table Booked Successfully", Toast.LENGTH_LONG).show()
 
-                     binding.tableNo1.setBackgroundColor(Color.parseColor("#000000"));
                 }
 
             }
@@ -240,7 +158,8 @@ class Home_Fragment : Fragment() {
                 binding11.viewPager.currentItem = 2
 
 
-                Toast.makeText(activity, "Table Booked Successfully", Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, "Table Booked Successfully", Toast.LENGTH_LONG).show()
+
 
 
                 dialog1!!.dismiss()
@@ -311,6 +230,20 @@ class Home_Fragment : Fragment() {
         binding.imgSlider.setData(list)
 
 //       binding.timeSpinner = ArrayAdapter(activity?, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.Languages))
+
+    }
+
+    fun setupTableRecyclerView(){
+
+        var db = DBHelper(activity)
+      list2 =  db.readTableData()
+
+        var adapter = viewTableAdapter(activity,list2)
+        var layoutManager = GridLayoutManager(activity,3)
+        binding.tableRecyclerView.adapter = adapter
+        binding.tableRecyclerView.layoutManager = layoutManager
+
+
 
     }
 

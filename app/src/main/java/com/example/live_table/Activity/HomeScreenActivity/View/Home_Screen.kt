@@ -2,11 +2,13 @@ package com.example.live_table.Activity.HomeScreenActivity.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.live_table.Utils.DBHelper
 import com.example.live_table.fragmentAdapter.Fragment_Adapter
 import com.example.live_table.databinding.HomeScreenBinding
 import com.google.android.material.tabs.TabLayout
 
 class Home_Screen : AppCompatActivity() {
+    var i = 1
 
     companion object
     {
@@ -20,6 +22,16 @@ class Home_Screen : AppCompatActivity() {
         setContentView(binding11.root)
 
         tab_layout()
+
+        var dbHelper2 =  DBHelper(this)
+
+        /*while (i<=12){
+
+            var dbHelper2 =  DBHelper(this)
+            dbHelper2.insertTableData("$i","0")
+            i++
+
+        }*/
 
     }
 
@@ -37,7 +49,7 @@ class Home_Screen : AppCompatActivity() {
 
         binding11.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                binding11.viewPager.currentItem = tab!!.position
+                binding11.viewPager.currentItem = tab?.position!!
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {

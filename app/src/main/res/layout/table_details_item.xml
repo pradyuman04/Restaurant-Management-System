@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
+    android:padding="8dp"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="60dp">
 
         <TextView
@@ -44,14 +44,14 @@
         android:id="@+id/main_rele"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/card_view"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/card_view">
 
         <TextView
             android:id="@+id/customer_name_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/quicksand_bold"
             android:text="ROCKY"
             android:textColor="#005F9F"
@@ -62,7 +62,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
             android:fontFamily="@font/quicksand_medium"
             android:text="12:12:12"
             android:textColor="#005F9F"
@@ -91,14 +90,51 @@
             android:textSize="15dp" />
 
         <ImageView
-            android:id="@+id/editImageBtn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/edit"
-            android:layout_toRightOf="@id/num_people_txt"
+            android:id="@+id/rupees"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:layout_below="@id/customer_name_txt"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/num_people_txt"
+            android:src="@drawable/rupee"
+            android:tint="#55B4F4" />
+
+        <TextView
+            android:id="@+id/totalAmountTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/customer_name_txt"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="12dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_toRightOf="@+id/rupees"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="2000"
+            android:textColor="#005F9F"
+            android:textSize="15dp" />
+
+
+        <ImageView
+            android:id="@+id/editImageBtn"
+            android:layout_width="16dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/customer_name_txt"
+            android:src="@drawable/edit" />
+
+
+        <TextView
+            android:id="@+id/orderInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customer_name_txt"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/totalAmountTxt"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="ORDER INFO"
+            android:textColor="#005F9F" />
 
         <Button
             android:id="@+id/booked_btn"
@@ -106,10 +142,9 @@
             android:layout_height="40dp"
             android:layout_below="@id/time_txt"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
             android:backgroundTint="#005F9F"
-            android:text="Booked"
-            android:fontFamily="@font/quicksand_semibold"/>
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="Booked" />
 
 
     </RelativeLayout>

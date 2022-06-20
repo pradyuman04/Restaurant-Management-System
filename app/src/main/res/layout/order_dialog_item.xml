@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/checkbox"
+        android:fontFamily="@font/quicksand_semibold"
+        android:text="ITEM NAME"
+        android:textColor="#005F9F" />
+
+    <TextView
+        android:id="@+id/r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_toLeftOf="@+id/itemPrice"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="₹"
+        android:textColor="#005F9F" />
+
+    <TextView
+        android:id="@+id/itemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="200"
+        android:textColor="#005F9F" />
+
+</RelativeLayout>
