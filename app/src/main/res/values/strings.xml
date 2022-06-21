@@ -1,15 +1,5 @@
 <resources>
-    <string name="app_name">Live_Table</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string-array name="Languages">
-        <item>Java</item>
-        <item>Kotlin</item>
-        <item>Swift</item>
-        <item>Python</item>
-        <item>Scala</item>
-        <item>Perl</item>
-    </string-array>
+    <string name="app_name">Live Table</string>
 
 
 </resources>

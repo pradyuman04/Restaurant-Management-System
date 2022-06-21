@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.live_table.R
-import com.example.live_table.Activity.HomeScreenActivity.View.Home_Screen.Companion.binding11
-import com.example.live_table.Utils.DBHelper
-import com.example.live_table.Utils.ModelData
-import com.example.live_table.Utils.viewModelData
+import com.example.live_table.activity.homescreenActivity.View.homescreenActivity.Companion.binding11
+import com.example.live_table.utils.DBHelper
+import com.example.live_table.utils.ModelData
+import com.example.live_table.utils.viewModelData
 import com.example.live_table.databinding.FragmentHomeBinding
 import com.example.live_table.fragmentAdapter.viewTableAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -22,7 +21,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Home_Fragment : Fragment() {
+class homeFragment : Fragment() {
 
 
     lateinit var binding: FragmentHomeBinding

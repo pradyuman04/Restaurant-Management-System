@@ -8,11 +8,11 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.live_table.R
 
-class Menu_Fragment_Adapter(
+class menuFragmentAdapter(
     val activity: FragmentActivity?,
     val dish_name: Array<String>,
     val dish_price: Array<String>,
-) : RecyclerView.Adapter<Menu_Fragment_Adapter.ViewData>() {
+) : RecyclerView.Adapter<menuFragmentAdapter.ViewData>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewData {
 

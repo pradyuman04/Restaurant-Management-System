@@ -1,13 +1,13 @@
-package com.example.live_table.Activity.HomeScreenActivity.View
+package com.example.live_table.activity.homescreenActivity.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.live_table.Utils.DBHelper
-import com.example.live_table.fragmentAdapter.Fragment_Adapter
+import com.example.live_table.utils.DBHelper
+import com.example.live_table.fragmentAdapter.fragmentAdapter
 import com.example.live_table.databinding.HomeScreenBinding
 import com.google.android.material.tabs.TabLayout
 
-class Home_Screen : AppCompatActivity() {
+class homescreenActivity : AppCompatActivity() {
     var i = 1
 
     companion object
@@ -42,7 +42,7 @@ class Home_Screen : AppCompatActivity() {
         binding11.tabLayout.addTab(binding11.tabLayout.newTab().setText("MENU"))
         binding11.tabLayout.addTab(binding11.tabLayout.newTab().setText("TABLE INFO"))
 
-        var adapter = Fragment_Adapter(this,supportFragmentManager)
+        var adapter = fragmentAdapter(this,supportFragmentManager)
         binding11.viewPager.adapter = adapter
 
         binding11.viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(binding11.tabLayout))

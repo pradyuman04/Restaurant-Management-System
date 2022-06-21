@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.live_table.Utils.DBHelper
-import com.example.live_table.Utils.ModelData
-import com.example.live_table.Utils.viewModelData
+import com.example.live_table.utils.DBHelper
+import com.example.live_table.utils.ModelData
+import com.example.live_table.utils.viewModelData
 import com.example.live_table.databinding.FragmentTableBinding
-import com.example.live_table.fragmentAdapter.Table_Fragment_Adapter
+import com.example.live_table.fragmentAdapter.tableFragmentAdapter
 
-class Table_Fragment : Fragment() {
+class tableFragment : Fragment() {
 
     companion object {
         lateinit var binding_table: FragmentTableBinding
@@ -20,7 +20,7 @@ class Table_Fragment : Fragment() {
     }
 
     var list1 = ArrayList<ModelData>()
-    val list2 = ArrayList<viewModelData>()
+    var list2 = ArrayList<viewModelData>()
 
 
     override fun onCreateView(
@@ -33,15 +33,16 @@ class Table_Fragment : Fragment() {
         var db = DBHelper(activity)
 
         list1 = db.readData()
+        list2 = db.readTableData()
 
-        setupRecyclerView(list1)
+        setupRecyclerView(list1,list2)
 
         return binding_table.root
     }
 
-    fun setupRecyclerView(l1: ArrayList<ModelData>) {
+    fun setupRecyclerView(l1: ArrayList<ModelData>,l2:ArrayList<viewModelData>) {
 
-        var adapter = Table_Fragment_Adapter(activity, l1,list2)
+        var adapter = tableFragmentAdapter(activity, l1,l2)
         var layoutManager = LinearLayoutManager(activity)
         binding_table.seedataRvview.adapter = adapter
         binding_table.seedataRvview.layoutManager = layoutManager

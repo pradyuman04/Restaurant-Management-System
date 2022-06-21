@@ -1,6 +1,7 @@
 package com.example.live_table.fragmentAdapter
 
 import android.app.Dialog
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,15 +11,15 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.live_table.R
-import com.example.live_table.Utils.DBHelper
-import com.example.live_table.Utils.ModelData
-import com.example.live_table.Utils.viewModelData
-import com.example.live_table.fragments.Table_Fragment.Companion.binding_table
+import com.example.live_table.utils.DBHelper
+import com.example.live_table.utils.ModelData
+import com.example.live_table.utils.viewModelData
+import com.example.live_table.fragments.tableFragment.Companion.binding_table
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>,val list2: ArrayList<viewModelData>) :
-    RecyclerView.Adapter<Table_Fragment_Adapter.ViewData>() {
+class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>, val list2: ArrayList<viewModelData>) :
+    RecyclerView.Adapter<tableFragmentAdapter.ViewData>() {
 
 
 
@@ -49,8 +50,6 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
         }
 
         holder.booked_btn.setOnClickListener{
-
-
             //db.updateTableData(list2[position].id,0)
 
             unbook(position)
@@ -81,6 +80,8 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
     fun unbook(position: Int) {
 
         var db = DBHelper(factivity)
+
+        Log.e("TAG", "unbook: ================ $list2" )
         db.updateTableData(list2[position].id,0)
 
     }
@@ -220,7 +221,7 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
 
     fun setupRecyclerView(l1: ArrayList<ModelData>) {
 
-        var adapter = Table_Fragment_Adapter(factivity, l1,list2)
+        var adapter = tableFragmentAdapter(factivity, l1,list2)
         var layoutManager = LinearLayoutManager(factivity)
         binding_table.seedataRvview.adapter = adapter
         binding_table.seedataRvview.layoutManager = layoutManager

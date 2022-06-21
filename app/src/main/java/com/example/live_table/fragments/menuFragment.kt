@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.example.live_table.databinding.FragmentMenuBinding
-import com.example.live_table.fragmentAdapter.Menu_Fragment_Adapter
+import com.example.live_table.fragmentAdapter.menuFragmentAdapter
 
 
-class Menu_Fragment : Fragment() {
+class menuFragment : Fragment() {
 
     lateinit var binding: FragmentMenuBinding
 
@@ -39,12 +39,12 @@ class Menu_Fragment : Fragment() {
 
     fun setupRecyclerView1(){
 
-        var adapter = Menu_Fragment_Adapter(activity,dish_name,dish_price)
+        var adapter = menuFragmentAdapter(activity,dish_name,dish_price)
         var layoutManager = LinearLayoutManager(activity)
         binding.menuRvView.adapter = adapter
         binding.menuRvView.layoutManager = layoutManager
 
-        var adapter2 = Menu_Fragment_Adapter(activity,dish_name2,dish_price2)
+        var adapter2 = menuFragmentAdapter(activity,dish_name2,dish_price2)
         var layoutManager2 = LinearLayoutManager(activity)
         binding.menuRvView2.adapter = adapter2
         binding.menuRvView2.layoutManager = layoutManager2

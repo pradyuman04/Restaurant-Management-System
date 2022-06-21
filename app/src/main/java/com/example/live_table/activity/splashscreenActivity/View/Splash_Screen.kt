@@ -1,11 +1,11 @@
-package com.example.live_table.Activity.SplashScreenActivity.View
+package com.example.live_table.activity.splashscreenActivity.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.live_table.Activity.HomeScreenActivity.View.Home_Screen
-import com.example.live_table.Utils.DBHelper
+import com.example.live_table.activity.homescreenActivity.View.homescreenActivity
+import com.example.live_table.utils.DBHelper
 import com.example.live_table.databinding.SplashScreenBinding
 
 class Splash_Screen : AppCompatActivity() {
@@ -18,7 +18,7 @@ class Splash_Screen : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler().postDelayed({
-            val intent = Intent(this, Home_Screen::class.java)
+            val intent = Intent(this, homescreenActivity::class.java)
             startActivity(intent)
             finish()
         }, 1500)

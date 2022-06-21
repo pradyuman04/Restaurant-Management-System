@@ -1,17 +1,16 @@
 package com.example.live_table.fragmentAdapter
 
 import android.graphics.Color
-import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.live_table.Activity.HomeScreenActivity.View.Home_Screen
+import com.example.live_table.activity.homescreenActivity.View.homescreenActivity
 import com.example.live_table.R
-import com.example.live_table.Utils.DBHelper
-import com.example.live_table.Utils.viewModelData
+import com.example.live_table.utils.DBHelper
+import com.example.live_table.utils.viewModelData
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.text.SimpleDateFormat
 import java.util.*
@@ -110,7 +109,7 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
                 customer_name.setText(null)
                 number_of_people.setText(null)
 
-                Home_Screen.binding11.viewPager.currentItem = 2
+                homescreenActivity.binding11.viewPager.currentItem = 2
 
 
                 Toast.makeText(activity, "Table Booked Successfully", Toast.LENGTH_LONG).show()

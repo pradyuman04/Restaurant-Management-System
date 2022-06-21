@@ -1,4 +1,4 @@
-package com.example.live_table.Utils
+package com.example.live_table.utils
 
 class ModelData(
     val id: String,
