@@ -20,7 +20,7 @@
             android:elevation="5dp">
 
             <TextView
-                android:id="@+id/tableNoTxt"
+                android:id="@+id/tableNoTxt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

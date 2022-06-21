@@ -152,6 +152,8 @@ class Home_Fragment : Fragment() {
 
                 )
 
+
+
                 customer_name.setText(null)
                 number_of_people.setText(null)
 

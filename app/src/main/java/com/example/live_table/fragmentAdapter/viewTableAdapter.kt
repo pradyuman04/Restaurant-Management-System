@@ -1,5 +1,7 @@
 package com.example.live_table.fragmentAdapter
 
+import android.graphics.Color
+import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,11 +27,23 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
 
     override fun onBindViewHolder(holder: ViewD, position: Int) {
         holder.tableNoTxt.text = list2[position].tableNoTxt1
+        var status = list2[position].status.toInt()
+
+        if (status.equals(1)) {
+
+            holder.rowOne.isEnabled = !(holder.rowOne.isEnabled)
+            holder.tableNoTxt.setBackgroundResource(R.drawable.booked)
+
+        }
 
         holder.rowOne.setOnClickListener {
 
-            bottomSheet(list2[position].tableNoTxt1)
+            bottomSheet(list2[position].tableNoTxt1, position)
+            if (status.equals(1)) {
 
+                holder.rowOne.isEnabled = !(holder.rowOne.isEnabled)
+
+            }
 
         }
     }
@@ -43,12 +57,12 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
 
     class ViewD(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var tableNoTxt = itemView.findViewById<TextView>(R.id.tableNoTxt)
+        var tableNoTxt = itemView.findViewById<TextView>(R.id.tableNoTxt1)
         var rowOne = itemView.findViewById<RelativeLayout>(R.id.rowOne)
 
     }
 
-    fun bottomSheet(tableNoTxt1: String) {
+    fun bottomSheet(tableNoTxt1: String, position: Int) {
 
 
         var db = DBHelper(activity)
@@ -89,6 +103,8 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
 
                     )
 
+                db.updateTableData(list2[position].id, 1)
+
                 customer_name.setText(null)
                 number_of_people.setText(null)
 
@@ -101,6 +117,7 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
 
                 dialog1!!.dismiss()
 
+
             }
 
 
@@ -108,5 +125,6 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
         dialog1?.show()
 
     }
+
 
 }

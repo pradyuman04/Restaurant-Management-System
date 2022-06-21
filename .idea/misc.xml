@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Live_Table/app/src/main/res/drawable-v24/booked.xml" value="0.1" />
         <entry key="..\:/Live_Table/app/src/main/res/drawable/rect.xml" value="0.1765" />
         <entry key="..\:/Live_Table/app/src/main/res/drawable/roundcornor_bg.xml" value="0.1765" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/demo.xml" value="0.264" />
@@ -18,6 +19,7 @@
         <entry key="..\:/Live_Table/app/src/main/res/layout/order_dialog.xml" value="0.24895833333333334" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/order_dialog_item.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/splash_screen.xml" value="0.25" />
+        <entry key="..\:/Live_Table/app/src/main/res/layout/table_details_item.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/update_delete_dialog.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/update_dialog.xml" value="0.24895833333333334" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/view_table.xml" value="0.25" />

@@ -141,4 +141,16 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
 
         db.update("live_table",cv,"id = $id",null)
     }
+
+    fun updateTableData(id: String, status: Int){
+
+        var db  = writableDatabase
+
+        var cv2 = ContentValues()
+
+        cv2.put("status",status)
+
+        db.update("table_info",cv2,"id = $id",null)
+
+    }
 }
