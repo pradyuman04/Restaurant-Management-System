@@ -1,8 +1,6 @@
 package com.example.live_table.fragmentAdapter
 
 import android.app.Dialog
-import android.content.DialogInterface
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,19 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.live_table.R
 import com.example.live_table.Utils.DBHelper
 import com.example.live_table.Utils.ModelData
+import com.example.live_table.Utils.viewModelData
 import com.example.live_table.fragments.Table_Fragment.Companion.binding_table
 import java.util.*
 import kotlin.collections.ArrayList
-import android.app.AlertDialog as AlertDialog1
 
-class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>) :
+class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>,val list2: ArrayList<viewModelData>) :
     RecyclerView.Adapter<Table_Fragment_Adapter.ViewData>() {
 
-    companion object {
-
-        lateinit var txt: TextView
-
-    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewData {
@@ -55,6 +48,15 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
 
         }
 
+        holder.booked_btn.setOnClickListener{
+
+
+            //db.updateTableData(list2[position].id,0)
+
+            unbook(position)
+
+        }
+
 
     }
 
@@ -71,7 +73,15 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
         var editImageBtn = itemView.findViewById<ImageView>(R.id.editImageBtn)
         var time_txt = itemView.findViewById<TextView>(R.id.time_txt)
         var orderInfo = itemView.findViewById<TextView>(R.id.orderInfo)
+        var booked_btn = itemView.findViewById<Button>(R.id.booked_btn)
 
+
+    }
+
+    fun unbook(position: Int) {
+
+        var db = DBHelper(factivity)
+        db.updateTableData(list2[position].id,0)
 
     }
 
@@ -210,13 +220,12 @@ class Table_Fragment_Adapter(val factivity: FragmentActivity?, val l1: ArrayList
 
     fun setupRecyclerView(l1: ArrayList<ModelData>) {
 
-        var adapter = Table_Fragment_Adapter(factivity, l1)
+        var adapter = Table_Fragment_Adapter(factivity, l1,list2)
         var layoutManager = LinearLayoutManager(factivity)
         binding_table.seedataRvview.adapter = adapter
         binding_table.seedataRvview.layoutManager = layoutManager
 
     }
-
 
     fun withMultiChoiceList() {
 

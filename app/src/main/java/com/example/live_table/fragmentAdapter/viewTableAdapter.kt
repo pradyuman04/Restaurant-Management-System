@@ -32,7 +32,8 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
         if (status.equals(1)) {
 
             holder.rowOne.isEnabled = !(holder.rowOne.isEnabled)
-            holder.tableNoTxt.setBackgroundResource(R.drawable.booked)
+            holder.tableNo1.setBackgroundResource(R.drawable.booked)
+            holder.tableNoTxt.setTextColor(Color.RED)
 
         }
 
@@ -58,6 +59,7 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
     class ViewD(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var tableNoTxt = itemView.findViewById<TextView>(R.id.tableNoTxt1)
+        var tableNo1 = itemView.findViewById<FrameLayout>(R.id.tableNo1)
         var rowOne = itemView.findViewById<RelativeLayout>(R.id.rowOne)
 
     }
