@@ -26,6 +26,8 @@ class homeFragment : Fragment() {
     val list = mutableListOf<CarouselItem>()
     var list1 = ArrayList<ModelData>()
     var list2 = ArrayList<viewModelData>()
+    val simpleDateFormat = SimpleDateFormat("HH:mm:ss 'at' dd.MM.yyyy")
+    val currentDateAndTime: String = simpleDateFormat.format(Date())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,12 +50,7 @@ class homeFragment : Fragment() {
 
         setupTableRecyclerView()
 
-
-        val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
-        val currentDateAndTime: String = simpleDateFormat.format(Date())
-
-        //var fullname: String? = getIntent().getStringExtra("n1")
-
+        binding.tableDetails.setText(currentDateAndTime)
 
         binding.tableDetailsTxt.setOnClickListener {
 
@@ -160,8 +157,6 @@ class homeFragment : Fragment() {
         var layoutManager = GridLayoutManager(activity,3)
         binding.tableRecyclerView.adapter = adapter
         binding.tableRecyclerView.layoutManager = layoutManager
-
-
 
     }
 
