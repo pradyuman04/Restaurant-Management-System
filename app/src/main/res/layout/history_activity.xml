@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.historyActivity.view.historyActivity">
+
+  <TextView
+      android:id="@+id/headerTxt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="15dp"
+      android:layout_marginLeft="15dp"
+      android:fontFamily="@font/quicksand_bold"
+      android:text="History of Booking"
+      android:textColor="#005F9F"
+      android:textSize="25dp" />
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_below="@+id/headerTxt"
+      android:background="#B1AEAE"
+      android:layout_margin="10dp"/>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#FAF6F6"
+      android:layout_below="@+id/headerTxt"
+      android:layout_marginTop="15dp"/>
+
+  </RelativeLayout>

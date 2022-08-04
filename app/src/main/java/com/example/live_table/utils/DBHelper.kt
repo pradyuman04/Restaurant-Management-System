@@ -8,20 +8,23 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", null, 1) {
 
-    override fun onCreate(p0: SQLiteDatabase?) {
+    override fun onCreate(db: SQLiteDatabase?) {
 
-        var quary =
-            "CREATE TABLE live_table (id INTEGER PRIMARY KEY AUTOINCREMENT,tableNoTxt INTEGER, customer_name TEXT,number_of_people TEXT,booking_time TEXT)"
-        p0!!.execSQL(quary)
+        var quary = "CREATE TABLE customer_info (id INTEGER PRIMARY KEY AUTOINCREMENT,tableNoTxt INTEGER, customer_name TEXT,number_of_people TEXT,booking_time TEXT)"
+        db!!.execSQL(quary)
 
         var quary2 = "CREATE TABLE table_info(id INTEGER PRIMARY KEY AUTOINCREMENT,tableNoTxt1 INTEGER,status INTEGER)"
 
-        p0!!.execSQL(quary2)
+        db!!.execSQL(quary2)
+
+        var quary3 = "CREATE TABLE history (id INTEGER PRIMARY KEY AUTOINCREMENT,tableNoTxt INTEGER, customer_name TEXT,number_of_people TEXT,booking_time TEXT)"
+        db!!.execSQL(quary3)
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
     }
 
+    //Table Info Table
     fun insertTableData(t1: String,t2:String){
 
         var db2 = writableDatabase
@@ -66,7 +69,6 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
 
     }
 
-
     fun checkData(): Boolean {
         var db=readableDatabase
         var sql="select * from table_info"
@@ -74,7 +76,19 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
         return cursor.count > 0
     }
 
+    fun updateTableData(tableNoTxt1: String, status: Int){
 
+        var db  = writableDatabase
+
+        var cv2 = ContentValues()
+
+        cv2.put("status",status)
+
+        db.update("table_info",cv2,"tableNoTxt1 = $tableNoTxt1",null)
+
+    }
+
+    //Customer Info Table
     fun insertData(n1: String, n2: String, n3: String, n4 : String) {
 
         var db = writableDatabase
@@ -85,7 +99,7 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
         cv.put("number_of_people", n3)
         cv.put("booking_time",n4)
 
-        var ret = db.insert("live_table", null, cv)
+        var ret = db.insert("customer_info", null, cv)
         println(ret)
 
     }
@@ -96,7 +110,7 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
         var list = arrayListOf<ModelData>()
 
         var db = readableDatabase
-        var quary = "SELECT * from live_table"
+        var quary = "SELECT * from customer_info"
 
         var cursor = db.rawQuery(quary, null)
 
@@ -126,7 +140,7 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
 
         var db = writableDatabase
 
-        db.delete("live_table", "id = $id", null)
+        db.delete("customer_info", "id = $id", null)
 
     }
 
@@ -138,19 +152,57 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "Live_Table.db", n
 
         cv.put("customer_name", customer_name)
         cv.put("number_of_people", number_of_people)
-
-        db.update("live_table",cv,"id = $id",null)
+        db.update("customer_info",cv,"id = $id",null)
     }
 
-    fun updateTableData(id: String, status: Int){
 
-        var db  = writableDatabase
+    //History Info Table
+    fun insertHistoryData(h1: String, h2: String, h3: String, h4 : String){
 
-        var cv2 = ContentValues()
+        var db = writableDatabase
 
-        cv2.put("status",status)
+        var cv = ContentValues()
+        cv.put("tableNoTxt",h1)
+        cv.put("customer_name", h2)
+        cv.put("number_of_people", h3)
+        cv.put("booking_time",h4)
 
-        db.update("table_info",cv2,"id = $id",null)
+        var ret = db.insert("history", null, cv)
+        println(ret)
+
+
+    }
+
+
+    @SuppressLint("Range")
+    fun  readHistoryData(): ArrayList<ModelData> {
+
+        var list = arrayListOf<ModelData>()
+
+        var db = readableDatabase
+        var quary = "SELECT * from history"
+
+        var cursor = db.rawQuery(quary, null)
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                var id = cursor.getString(cursor.getColumnIndex("id"))
+                var tableNoTxt = cursor.getString(cursor.getColumnIndex("tableNoTxt"))
+                var customer_name = cursor.getString(cursor.getColumnIndex("customer_name"))
+                var number_of_people = cursor.getString(cursor.getColumnIndex("number_of_people"))
+                var booking_time = cursor.getString(cursor.getColumnIndex("booking_time"))
+
+
+                var l1 = ModelData(id,tableNoTxt, customer_name, number_of_people,booking_time)
+                list.add(l1)
+
+            } while (cursor.moveToNext())
+
+        }
+
+        return list
 
     }
 }

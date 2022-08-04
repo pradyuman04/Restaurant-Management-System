@@ -1,11 +1,13 @@
 package com.example.live_table.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.live_table.activity.historyActivity.view.historyActivity
 import com.example.live_table.utils.DBHelper
 import com.example.live_table.utils.ModelData
 import com.example.live_table.utils.viewModelData
@@ -36,6 +38,15 @@ class tableFragment : Fragment() {
         list2 = db.readTableData()
 
         setupRecyclerView(list1,list2)
+
+        binding_table.historyButton.setOnClickListener{
+
+            var intent = Intent(activity, historyActivity::class.java)
+
+            startActivity(intent)
+
+
+        }
 
         return binding_table.root
     }

@@ -18,6 +18,7 @@ import com.example.live_table.fragments.tableFragment.Companion.binding_table
 import java.util.*
 import kotlin.collections.ArrayList
 
+
 class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<ModelData>, val list2: ArrayList<viewModelData>) :
     RecyclerView.Adapter<tableFragmentAdapter.ViewData>() {
 
@@ -44,13 +45,11 @@ class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<M
 
         holder.orderInfo.setOnClickListener {
 
-            // withMultiChoiceList()
-            orderInfodialog()
+            //orderInfodialog()
 
         }
 
         holder.booked_btn.setOnClickListener{
-            //db.updateTableData(list2[position].id,0)
 
             unbook(position)
 
@@ -82,7 +81,14 @@ class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<M
         var db = DBHelper(factivity)
 
         Log.e("TAG", "unbook: ================ $list2" )
-        db.updateTableData(list2[position].id,0)
+        db.updateTableData(l1[position].tableNoTxt,0)
+
+        db.insertHistoryData(l1[position].tableNoTxt,l1[position].customer_name,l1[position].number_of_people,l1[position].booking_time)
+
+        db.deleteData(l1[position].id)
+
+        var l1 = DBHelper(factivity).readData()
+        setupRecyclerView(l1)
 
     }
 
@@ -145,7 +151,18 @@ class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<M
 
     }
 
-    fun orderInfodialog() {
+    fun setupRecyclerView(l1: ArrayList<ModelData>) {
+
+        var adapter1 = tableFragmentAdapter(factivity, l1,list2)
+        var layoutManager1 = LinearLayoutManager(factivity)
+
+        binding_table.seedataRvview.adapter = adapter1
+        binding_table.seedataRvview.layoutManager = layoutManager1
+
+    }
+}
+
+/*fun orderInfodialog() {
 
         val builder = AlertDialog.Builder(factivity!!)
         // String array for alert dialog multi choice items
@@ -219,14 +236,7 @@ class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<M
 
     }
 
-    fun setupRecyclerView(l1: ArrayList<ModelData>) {
 
-        var adapter = tableFragmentAdapter(factivity, l1,list2)
-        var layoutManager = LinearLayoutManager(factivity)
-        binding_table.seedataRvview.adapter = adapter
-        binding_table.seedataRvview.layoutManager = layoutManager
-
-    }
 
     fun withMultiChoiceList() {
 
@@ -246,5 +256,4 @@ class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<M
 
         builder.show()
 
-    }
-}
+    }*/

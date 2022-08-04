@@ -12,4 +12,14 @@
     android:layout_height="wrap_content"
         android:background="#FAF6F6"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/historyButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:backgroundTint="#005F9F"
+        android:src="@drawable/history"/>
+
 </RelativeLayout>

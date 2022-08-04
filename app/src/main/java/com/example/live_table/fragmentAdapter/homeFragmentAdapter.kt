@@ -16,8 +16,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<viewModelData>) :
-    RecyclerView.Adapter<viewTableAdapter.ViewD>() {
+class homeFragmentAdapter(val activity: FragmentActivity?, val list2: ArrayList<viewModelData>) :
+    RecyclerView.Adapter<homeFragmentAdapter.ViewD>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewD {
         var view = LayoutInflater.from(activity).inflate(R.layout.view_table, parent, false)
@@ -36,6 +36,7 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
 
         }
 
+
         holder.rowOne.setOnClickListener {
 
             bottomSheet(list2[position].tableNoTxt1, position)
@@ -46,6 +47,7 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
             }
 
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -104,20 +106,16 @@ class viewTableAdapter(val activity: FragmentActivity?, val list2: ArrayList<vie
 
                     )
 
-                db.updateTableData(list2[position].id, 1)
+                db.updateTableData(list2[position].tableNoTxt1, 1)
 
                 customer_name.setText(null)
                 number_of_people.setText(null)
 
                 homescreenActivity.binding11.viewPager.currentItem = 2
 
-
                 Toast.makeText(activity, "Table Booked Successfully", Toast.LENGTH_LONG).show()
 
-
-
                 dialog1!!.dismiss()
-
 
             }
 

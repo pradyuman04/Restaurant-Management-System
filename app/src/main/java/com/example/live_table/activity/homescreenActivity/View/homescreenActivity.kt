@@ -23,16 +23,6 @@ class homescreenActivity : AppCompatActivity() {
 
         tab_layout()
 
-        var dbHelper2 =  DBHelper(this)
-
-        /*while (i<=12){
-
-            var dbHelper2 =  DBHelper(this)
-            dbHelper2.insertTableData("$i","0")
-            i++
-
-        }*/
-
     }
 
     fun tab_layout(){
