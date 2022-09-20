@@ -33,14 +33,18 @@ In Live News Application you can read news in very differnt Category. I used Que
 ## Screenshots
 
 <p float="center">
-  
-<img src="https://user-images.githubusercontent.com/101545076/191160949-17e8bce7-d16e-4f3a-aa07-7a5d7f689637.png" width=22% height=35%>
-  
-<img src="https://user-images.githubusercontent.com/101545076/191160969-4e008f68-d769-4127-a23a-779f8753d98a.png" width=22% height=35%>
+ 
+<img src="https://user-images.githubusercontent.com/101545076/191163873-f8102028-19be-4da2-9198-f2fecf80ef50.png" width=22% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191160995-0d4e35f4-973f-4e6f-9b4a-d593f20abcce.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163881-47afc1c6-f2c7-43c1-a316-344710652867.png" width=22% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191161005-1940b6c0-1c0c-4225-a642-2c754ee12c6f.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163910-6b40a77a-d54c-4814-830f-15c1f50e0753.png" width=22% height=35%>
+
+<img src="https://user-images.githubusercontent.com/101545076/191163922-86562eb4-e086-4d45-9b01-2acd9b6b8ef7.png" width=22% height=35%>
+
+<img src="https://user-images.githubusercontent.com/101545076/191163926-d5065cca-8da2-4fb0-bd93-f4766b401cec.png" width=22% height=35%>
+
+<img src="https://user-images.githubusercontent.com/101545076/191164203-ea845ee0-a8ad-438c-bd7b-25b66dd7fff7.png" width=22% height=35%>
 
 </p>
 
@@ -59,7 +63,7 @@ If you have any feedback, please reach out to us at pradyumangodhani007@gmail.co
 
 ## 🛠 Skills
 
-C Language, C++ , Core JAVA ,Kotlin, Android 
+C Language , C++ , Core JAVA , Kotlin , Android 
 
 
 ## Support
