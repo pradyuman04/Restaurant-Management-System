@@ -1,6 +1,6 @@
 # Restaurant Management System
 
-Live News Application is provides you Live news using Free News API. I had use Google news API and Restful API. I used Retrofit method call API. Live News Application was made using Kotlin Lanugage.
+Restaurant Management System Application is provides you Live news using Free News API. I had use Google news API and Restful API. I used Retrofit method call API. Live News Application was made using Kotlin Lanugage.
 
 The codebase focuses 👓 on following key things:
 
@@ -20,13 +20,13 @@ In Live News Application you can read news in very differnt Category. I used Que
 
 ## Features
 
-- Daily Live News
+- Live Table Information
 
-- News from popular sources like Google
+- Manage Table in Easy Way
 
-- News with HD Images
+- Simple UI
 
-- Genuie News
+- For All type of Restaurant 
 
 
 
