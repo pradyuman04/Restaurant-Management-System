@@ -34,17 +34,17 @@ In Live News Application you can read news in very differnt Category. I used Que
 
 <p float="center">
  
-<img src="https://user-images.githubusercontent.com/101545076/191163873-f8102028-19be-4da2-9198-f2fecf80ef50.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163873-f8102028-19be-4da2-9198-f2fecf80ef50.png" width=25% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191163881-47afc1c6-f2c7-43c1-a316-344710652867.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163881-47afc1c6-f2c7-43c1-a316-344710652867.png" width=25% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191163910-6b40a77a-d54c-4814-830f-15c1f50e0753.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163910-6b40a77a-d54c-4814-830f-15c1f50e0753.png" width=25% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191163922-86562eb4-e086-4d45-9b01-2acd9b6b8ef7.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163922-86562eb4-e086-4d45-9b01-2acd9b6b8ef7.png" width=25% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191163926-d5065cca-8da2-4fb0-bd93-f4766b401cec.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191163926-d5065cca-8da2-4fb0-bd93-f4766b401cec.png" width=25% height=35%>
 
-<img src="https://user-images.githubusercontent.com/101545076/191164203-ea845ee0-a8ad-438c-bd7b-25b66dd7fff7.png" width=22% height=35%>
+<img src="https://user-images.githubusercontent.com/101545076/191164203-ea845ee0-a8ad-438c-bd7b-25b66dd7fff7.png" width=25% height=35%>
 
 </p>
 
