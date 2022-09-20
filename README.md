@@ -11,7 +11,7 @@ Kotlin
 And tests 🛠
 Emojis (ofcourse) 😛
 
-In Live News Application you can read news in very differnt Category. I used Query API to call same API with differnt parameters. In Live News Application news are refreshs in every 10 min.
+In Restaurant Management System Application staff can easily manage table. I used Query API to call same API with differnt parameters. In Live News Application news are refreshs in every 10 min.
 
 ## Author
 
