@@ -11,9 +11,9 @@ Kotlin
 And tests 🛠
 Emojis (ofcourse) 😛
 
-In Restaurant Management System Application staff can easily manage table. I used Query API to call same API with differnt parameters. In Live News Application news are refreshs in every 10 min.
+In Restaurant Management System Application staff can easily manage table. This app can increase the working efficiency, better management system, enhance revenue, and many more!
 
-## Author
+## Developer
 
 - [@pradyuman001](https://github.com/pradyuman001)
 
