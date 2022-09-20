@@ -1,6 +1,6 @@
 # Restaurant Management System
 
-Restaurant Management System Application is provides you Live news using Free News API. I had use Google news API and Restful API. I used Retrofit method call API. Live News Application was made using Kotlin Lanugage.
+Restaurant Management System Application is very usefull to manage Table in Rush Hours. You can easily track booked table details in Restaurant Management System. I used MySQL Database to manage data. Restaurant Management System was made using Kotlin Lanugage.
 
 The codebase focuses 👓 on following key things:
 
