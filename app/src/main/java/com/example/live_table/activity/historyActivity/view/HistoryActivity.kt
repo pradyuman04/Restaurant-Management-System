@@ -20,6 +20,11 @@ class historyActivity : AppCompatActivity() {
 
         var l1 = DBHelper(this).readHistoryData()
         setHistory(l1)
+
+        binding.backImage.setOnClickListener {
+
+            onBackPressed()
+        }
     }
 
     fun setHistory(list: ArrayList<ModelData>){

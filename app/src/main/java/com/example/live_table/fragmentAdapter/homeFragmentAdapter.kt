@@ -36,7 +36,6 @@ class homeFragmentAdapter(val activity: FragmentActivity?, val list2: ArrayList<
 
         }
 
-
         holder.rowOne.setOnClickListener {
 
             bottomSheet(list2[position].tableNoTxt1, position)

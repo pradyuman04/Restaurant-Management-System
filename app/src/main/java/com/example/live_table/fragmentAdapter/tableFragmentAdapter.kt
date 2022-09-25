@@ -1,16 +1,19 @@
 package com.example.live_table.fragmentAdapter
 
 import android.app.Dialog
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.live_table.R
+import com.example.live_table.activity.menuActivity
 import com.example.live_table.utils.DBHelper
 import com.example.live_table.utils.ModelData
 import com.example.live_table.utils.viewModelData
@@ -45,7 +48,9 @@ class tableFragmentAdapter(val factivity: FragmentActivity?, val l1: ArrayList<M
 
         holder.orderInfo.setOnClickListener {
 
-            //orderInfodialog()
+            var intent = Intent(factivity,menuActivity::class.java)
+
+            factivity?.startActivity(intent)
 
         }
 

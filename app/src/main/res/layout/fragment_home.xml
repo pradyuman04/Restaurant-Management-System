@@ -38,6 +38,7 @@
 
                 </RelativeLayout>
 
+<!--
                 <RelativeLayout
                     android:layout_below="@id/image_slider_rele"
                     android:layout_width="wrap_content"
@@ -131,6 +132,7 @@
 
 
                 </RelativeLayout>
+-->
 
                 <RelativeLayout
                     android:layout_width="wrap_content"

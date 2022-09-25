@@ -26,8 +26,7 @@ class homeFragment : Fragment() {
     val list = mutableListOf<CarouselItem>()
     var list1 = ArrayList<ModelData>()
     var list2 = ArrayList<viewModelData>()
-    val simpleDateFormat = SimpleDateFormat("HH:mm:ss 'at' dd.MM.yyyy")
-    val currentDateAndTime: String = simpleDateFormat.format(Date())
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,50 +43,7 @@ class homeFragment : Fragment() {
 
         imageslider()
 
-
-        var db = DBHelper(activity)
-
-
         setupTableRecyclerView()
-
-        binding.tableDetails.setText(currentDateAndTime)
-
-        binding.tableDetailsTxt.setOnClickListener {
-
-            binding11.viewPager.currentItem = 2
-        }
-
-        binding.bookBtn.setOnClickListener {
-
-
-
-                 if (binding.customerNameEdt.text.isNullOrEmpty()) {
-
-                    binding.customerNameEdt.error = "Please Enter Customer Name"
-
-                } else if (binding.peopleEdt.text.isNullOrEmpty()) {
-
-                    binding.peopleEdt.error = "Please Enter Number of People"
-
-                } else {
-
-                    db.insertData(
-                        binding.tableNoEdt.text.toString(),
-                        binding.customerNameEdt.text.toString(),
-                        binding.peopleEdt.text.toString(),
-                        currentDateAndTime)
-
-                    binding.tableNoEdt.setText(null)
-                    binding.customerNameEdt.setText(null)
-                    binding.peopleEdt.setText(null)
-
-                    binding11.viewPager.currentItem = 2
-
-                    Toast.makeText(activity, "Table Booked Successfully", Toast.LENGTH_LONG).show()
-                }
-            }
-
-            list1 = db.readData()
 
         return binding.root
     }
@@ -159,27 +115,4 @@ class homeFragment : Fragment() {
         binding.tableRecyclerView.layoutManager = layoutManager
 
     }
-
-
-    /*fun setupSpinner() {
-
-        val personNames = arrayOf("Rahul", "Jack", "Rajeev", "Aryan", "Rashmi", "Jaspreet", "Akbar")
-        val spinner = binding.timeSpinner
-        val arrayAdapter  =
-            activity?.let { ArrayAdapter(it, android.R.layout.simple_spinner_item, personNames) }
-        spinner.adapter = arrayAdapter
-
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(parent: AdapterView<*>,view: View,position: Int,id: Long)
-
-            {}
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Code to perform some action when nothing is selected
-            }
-
-        }
-
-    }*/
 }

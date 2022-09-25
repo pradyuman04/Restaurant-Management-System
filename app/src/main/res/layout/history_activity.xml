@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".activity.historyActivity.view.historyActivity">
 
+  <ImageView
+      android:id="@+id/backImage"
+      android:layout_width="25dp"
+      android:layout_height="25dp"
+      android:src="@drawable/arrow"
+      android:layout_marginTop="22dp"
+      android:layout_marginLeft="15dp"
+      app:tint="#005F9F" />
+
   <TextView
       android:id="@+id/headerTxt"
       android:layout_width="wrap_content"
@@ -16,7 +25,8 @@
       android:fontFamily="@font/quicksand_bold"
       android:text="History of Booking"
       android:textColor="#005F9F"
-      android:textSize="25dp" />
+      android:textSize="25dp"
+      android:layout_toEndOf="@+id/backImage"/>
 
   <View
       android:layout_width="match_parent"

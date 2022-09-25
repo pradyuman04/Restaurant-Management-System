@@ -6,11 +6,12 @@
         <entry key="..\:/Live_Table/app/src/main/res/drawable-v24/booked.xml" value="0.1" />
         <entry key="..\:/Live_Table/app/src/main/res/drawable/rect.xml" value="0.1765" />
         <entry key="..\:/Live_Table/app/src/main/res/drawable/roundcornor_bg.xml" value="0.1765" />
+        <entry key="..\:/Live_Table/app/src/main/res/layout/activity_menu.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/demo.xml" value="0.264" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/dialog.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/dialog_2_my_rounded_bottom_sheet.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Live_Table/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
+        <entry key="..\:/Live_Table/app/src/main/res/layout/fragment_menu.xml" value="0.176" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/fragment_table.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/get_data_bottomsheet.xml" value="0.25" />
         <entry key="..\:/Live_Table/app/src/main/res/layout/history_activity.xml" value="0.25" />
